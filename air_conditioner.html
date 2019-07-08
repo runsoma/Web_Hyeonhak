@@ -1,0 +1,63 @@
+﻿<head>
+<title>에어컨</title>
+
+<body>
+
+
+<h2> 에어컨 </h2>
+<p> 현재 온도 </p>
+<p id="demo"> </p>
+
+
+<input type='button' value="ON" onclick="Buttonchange()" onclick='alert("test")' id="myButton1"/> 
+<input type="button" value="닫기" onclick="self.close()"/>
+<br><br>
+<input type='button' value="희망 온도 올리기" onclick="Up()" onclick='alert("test")' id="myButton1"/> 
+<input type='button' value="희망 온도 낮추기" onclick="Down()" onclick='alert("test")' id="myButton1"/> 
+
+
+
+<script>
+var wind = 26;
+document.getElementById("demo").innerHTML = window.wind;
+
+function Buttonchange()
+{
+	var word = document.getElementById("myButton1");
+	if(word.value=="OFF") {word.value = "ON"; alert("Turn OFF"); wind = 26; document.getElementById("demo").innerHTML = window.wind;}
+	else {word.value="OFF"; alert("Turn ON");}
+	
+}
+
+function Up()
+{
+var word = document.getElementById("myButton1");
+if(word.value == "ON") {
+	alert("에어컨이 꺼져있습니다.");
+}
+else{
+if(wind > 34)
+alert("희망 온도가 최대입니다.");
+else
+wind++;
+document.getElementById("demo").innerHTML = window.wind;
+}
+}
+function Down()
+{
+var word = document.getElementById("myButton1");
+if(word.value == "ON") {
+	alert("에어컨이 꺼져있습니다.");
+}
+else{
+if(wind == 22)
+alert("희망 온도가 최소입니다.");
+else
+wind--;
+document.getElementById("demo").innerHTML = window.wind;
+}
+}
+</script>
+
+</body>
+</head>
