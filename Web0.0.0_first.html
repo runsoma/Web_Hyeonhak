@@ -2,10 +2,7 @@
 <html lang = "en">
 <head>
 <style type="text/css">
-.info
-{
 
-}
 
 .dropdown{
 	position: relative;
@@ -20,9 +17,9 @@
 }
 
 .ON_BUTTON{
-	position:relative;
-	top:400px;
-	left:330px;
+	position: absolute;
+	top:80%;
+	left:57.5%;
 }
 
 .dropbutton{
@@ -54,10 +51,20 @@ cursor: pointer;
 
 }
 body{
-	height: 100%;	
-	background-image: url('home.png');
-	background-sze: cover;
+	
+	background-image: url('1.jpg');
+	background-size: cover;
 	background-repeat: no-repeat;	
+}
+.home{
+	position:relative;
+	text-align: center;
+}
+
+.TEXT{
+	position: absolute;
+	top:30%;
+	left:40%;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -122,16 +129,22 @@ window.onclick = function(event) {
 	</div>
 </div>
 
-<div class="ON_BUTTON">
+<div class=home>
+<div class=ON_BUTTON>
 <input id="myButton1" type='button' value="ON" onclick="Buttonchange()" > </input>
 </div>
 
-<br><br><br>
-<div class="info">
-현재 미세먼지 농도 : 53%<br>
-초미세먼지 농도 : 52%<br>
-오존 농도 : 32%<br>
+
+	<img src="home.png" alt="home image">
+	<div class=TEXT>
+	현재 미세먼지 농도 : 53%<br>
+	초미세먼지 농도 : 52%<br>
+	오존 농도 : 32%<br>
+	</div>
 </div>
+
+<br><br><br>
+
 
 
 </body>

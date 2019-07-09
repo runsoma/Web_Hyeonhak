@@ -39,7 +39,8 @@ cursor: pointer;
 
 }
 body{
-
+	background-image : url('1.jpg');
+  background-size:cover;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -51,6 +52,10 @@ body{
 
 .dropdown:hover .dropbutton{background-color: #3e8e41;}
 
+.BTN{
+	position:relative;
+	left:47%;
+}
 
 </style>
 
@@ -119,13 +124,10 @@ function humidifier(){
 
 
 <br>
-<input type="button" value="공기청정기 기능" onclick="aircond();" />
-<br>
-<input type="button" value="에어컨 기능" onclick="air_conditioner();" />
-
-<br>
-<input type="button" value="가습기 기능" onclick="humidifier();" />
-<br>
-
+<div class=BTN>
+<input type="button" value="공기청정기 기능" onclick="aircond();" /><br>
+<input type="button" value="에어컨 기능" onclick="air_conditioner();" /><br>
+<input type="button" value="가습기 기능" onclick="humidifier();" /><br>
+</div>
 </body>
 </html>

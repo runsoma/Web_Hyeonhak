@@ -39,7 +39,8 @@ cursor: pointer;
 
 }
 body{
-
+  background-image:url('1.jpg');
+  background-size:cover;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -51,7 +52,14 @@ body{
 
 .dropdown:hover .dropbutton{background-color: #3e8e41;}
 
+.img{
+  position:relative;
+  left:40%;
 
+}
+.TEXT{
+  text-align:center;
+}
 </style>
 
 <meta charset = "UTF-8">
@@ -63,32 +71,6 @@ body{
 </head>
  <body>
 
-<script>
-function Buttonchange()
-{
-	var word = document.getElementById("myButton1");
-	if(word.value=="OFF") {word.value = "ON"; alert("Turn OFF");}
-	else {word.value="OFF"; alert("Turn ON");}
-	
-}
-
-function dropdownclick() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbutton')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 
 <body>
 
@@ -105,12 +87,63 @@ window.onclick = function(event) {
 	</div>
 </div>
 
+<div class=TEXT>
+  Current Mode 
+  <p id="MODE"> TEST </p>
+  
+
+</div>
 
 <br>
-<img src="cook.jpg" style="width:200px; height:200px; cursor:pointer" onclick="alert('Cook Mode')">
-<img src="study.jpg" style="width:200px; height:200px; cursor:pointer"onclick="alert('Study Mode')">
+<div class=img>
+<img src="cook.jpg" style="width:200px; height:200px; cursor:pointer" onclick="MODE_CHANGER('COOK')">
+<img src="study.jpg" style="width:200px; height:200px; cursor:pointer"onclick="MODE_CHANGER('STUDY')">
 <br>
-<img src="normal.jpg"style="width:200px; height:200px; cursor:pointer" onclick="alert('Normal Mode')">
-<img src="sleep.jpg" style="width:200px; height:200px; cursor:pointer" onclick="alert('Sleep Mode')">
+<img src="normal.jpg"style="width:200px; height:200px; cursor:pointer" onclick="MODE_CHANGER('NORMAL')">
+<img src="sleep.jpg" style="width:200px; height:200px; cursor:pointer" onclick="MODE_CHANGER('SLEEP')">
+</div>
+
+
+<script>
+    var mode = "NORMAL";
+    document.getElementById("MODE").innerHTML = window.mode;
+
+
+    function MODE_CHANGER(text){
+      mode = text;
+      if(text=="COOK"){
+        alert("COOK MODE");
+      }
+      else if(text=="STUDY"){
+        alert("STUDY MODE");
+      }
+      else if(text=="NORMAL"){
+        alert("NORMAL MODE");
+      }
+      else {
+        alert("SLEEP MODE");
+      }
+      document.getElementById("MODE").innerHTML = window.mode;
+    }
+
+
+  function dropdownclick() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbutton')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  </script>
+
 </body>
 </html>
