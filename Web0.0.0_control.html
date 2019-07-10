@@ -18,6 +18,7 @@ font-size:16px;
 height:50px;
 width:150px;
 cursor: pointer;
+transition: all 0.5s;
 
 }
 
@@ -49,8 +50,31 @@ body{
 
 .show{display: block;}
 .dropdown-content a:hover {background-color:#ddd;}
+.dropbutton:hover{
+	background-color: #31A8BB;
+}
 
-.dropdown:hover .dropbutton{background-color: #3e8e41;}
+.dropbutton span{
+	position:relative;
+	display:inline-block;
+	transition:0.5s;
+}
+
+.dropbutton span::after{
+	content: ">>";
+	position:absolute;
+	opacity :0;
+	right: -20px;
+	transition: 0.5s;
+}
+.dropbutton:hover span{
+	padding-right: 25px;
+}
+.dropbutton:hover span::after{
+	opacity : 1;
+	right : 0;
+}
+
 
 .BTN{
 	position:relative;
@@ -113,7 +137,7 @@ function humidifier(){
 
 
 <div class="dropdown">
-	<button onclick="dropdownclick()" class="dropbutton">메뉴</button>
+	<button onclick="dropdownclick()" class="dropbutton"><span>메뉴</span></button>
 	<div class="dropdown-content" id="myDropdown">
 		<a herf="#" onclick="location.href='Web0.0.0_first.html'">Home</a>
 		<a herf="#" onclick="location.href='Web0.0.0_aircond.html'">상세 공기 상태</a>

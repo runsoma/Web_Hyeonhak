@@ -24,6 +24,19 @@ background-size:cover;
 	text-align: center;
 	font size:5px;
 }
+.Button input
+{
+	cursor:pointer;
+	transition: all 0.3s ease 0s;
+	background-color : #48DBF2;
+	color:black;
+	border-radius:12px;
+}
+.Button input:hover{
+	background-color:#31A8BB;
+	color:white;
+	transform: translateY(-7px);
+}
  </style>
 
   <meta charset="UTF-8">
@@ -48,9 +61,11 @@ background-size:cover;
 	아이디 : <input type="text" name="fname">
 	비밀번호 : <input type="password" name="fname"><br>
 	<br><br>
+	<div class="Button">
 	<input type="button" value="로그인" onclick="location.href='Web0.0.0_first.html'">
 	<input type="button" value="회원가입" onclick="location.href='Enroll.html'">
 	<input type="submit" value="블루투스 연결">
+	</div>
 </form>
 
  </body>
