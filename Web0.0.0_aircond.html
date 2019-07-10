@@ -24,7 +24,9 @@ width:150px;
 cursor: pointer;
 
 }
-
+.dropbutton span{
+	pointer-events: none;
+}
 .dropdown-content{
   display: none;
   position: absolute;
@@ -123,7 +125,7 @@ window.onclick = function(event) {
 
 
 <div class="dropdown">
-	<button onclick="dropdownclick()" class="dropbutton"><span class="Dropbutton">메뉴</span></button>
+	<button onclick="dropdownclick()" class="dropbutton"><span>메뉴</span></button>
 	<div class="dropdown-content" id="myDropdown">
 		<a herf="#" onclick="location.href='Web0.0.0_first.html'">Home</a>
 		<a herf="#" onclick="location.href='Web0.0.0_data.html'">누적 데이터</a>
