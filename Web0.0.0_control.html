@@ -78,9 +78,18 @@ body{
 }
 
 
-.BTN{
+.BTN input{
 	position:relative;
-	left:47%;
+	left: 40%;
+	background-color:#3498DB;
+	border-radius:12px;
+	height :70px;
+	width : 120px;
+	display: inline-block;
+}
+.BTN input:hover{
+	background-color:cadetblue;
+	color:white;
 }
 
 </style>
@@ -149,11 +158,12 @@ function humidifier(){
 </div>
 
 
-<br>
+<br><br><br><br>
 <div class=BTN>
-<input type="button" value="공기청정기 기능" onclick="aircond();" /><br>
-<input type="button" value="에어컨 기능" onclick="air_conditioner();" /><br>
-<input type="button" value="가습기 기능" onclick="humidifier();" /><br>
+<input type="button" value="공기청정기 기능" onclick="aircond();" />
+<input type="button" value="에어컨 기능" onclick="air_conditioner();" />
+<input type="button" value="가습기 기능" onclick="humidifier();" />
 </div>
+
 </body>
 </html>

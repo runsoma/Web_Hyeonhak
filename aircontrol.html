@@ -1,63 +1,117 @@
-﻿<head>
-<title>에어컨</title>
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+	<style type="text/css">
+	
+	body{
+		
+	}
+	.BUTTON_DESIGN{
+		position:relative;
+
+	}
+	.BUTTON1 input{
+		background-color:gray;
+		border-radius:15px;
+		width:70px;
+		height:30px;
+	}
+	.BUTTON2 input{
+		display:inline;
+		position:absolute;
+		background-color:white;
+		border-color:black;
+		border-radius:15px;
+		width:25px;
+		height:25px;
+		top : 3px;
+		left : 160px;
+	}
+	
+	.FORMAT
+	{
+		text-align:center;
+	}
+	</style>
+
+
+<title>공기청정기</title>
+</head>
 
 <body>
+<div class="FORMAT">
 
 
 <h2> 공기청정기 </h2>
 <p> 현재 바람 세기 </p>
 <p id="demo"> </p>
 
+<div class="BUTTON_DESIGN">
+		<span class="BUTTON1"><input type="button" id="button1"/></span>
+		<span class="BUTTON2"><input type="button" id="button2" onclick="ON_BUTTON()"/></span>
+</div>
 
-<input type='button' value="ON" onclick="Buttonchange()" id="myButton1"/> 
-<input type="button" value="닫기" onclick="self.close()"/>
+<br>
+
+<img src='close.png' height="50px" width="50px" alt="up image" onclick="self.close()">
 <br><br>
-<input type='button' value="바람 세기 올리기" onclick="Up()" id="myButton1"/> 
-<input type='button' value="바람 세기 낮추기" onclick="Down()" id="myButton1"/> 
+
+<img src='up.png' height="50px" width="50px" alt="up image" onclick="Up()">
+<img src='down.png' height="50px" width="50px" alt="up image" onclick="Down()" >
+
+</div>
+
+</body>
+
+
 
 
 
 <script>
 var wind = 0;
+var state = 0;
 document.getElementById("demo").innerHTML = window.wind;
 
-function Buttonchange()
-{
-	var word = document.getElementById("myButton1");
-	if(word.value=="OFF") {word.value = "ON"; alert("Turn OFF"); wind = 0; document.getElementById("demo").innerHTML = window.wind;}
-	else {word.value="OFF"; alert("Turn ON");}
+function ON_BUTTON(){
 	
+	
+	var btn1 = document.getElementById("button1");
+	var btn2 = document.getElementById("button2");
+	if(state == 0){
+		
+		btn1.style.backgroundColor = "green";
+		btn2.style.transform = "translate(41px,0px)";
+		state = 1;
+	}
+	else {
+		
+		btn1.style.backgroundColor = "gray";
+		btn2.style.transform = "translate(0px,0px)";
+		state = 0;
+		wind = 0;
+		document.getElementById("demo").innerHTML = window.wind;
+	}
 }
 
-function Up()
-{
-var word = document.getElementById("myButton1");
-if(word.value == "ON") {
-	alert("공기 청정기가 꺼져있습니다.");
+
+function Up(){
+	if(state == 0)	alert("공기 청정기가 꺼져 있습니다.");
+	else{
+		if(wind > 2) alert("바람 세기가 최대입니다.");
+		else wind++;
+		document.getElementById("demo").innerHTML = window.wind;
+	}
 }
-else{
-if(wind > 2)
-alert("바람 세기가 최대입니다.");
-else
-wind++;
-document.getElementById("demo").innerHTML = window.wind;
-}
-}
-function Down()
-{
-var word = document.getElementById("myButton1");
-if(word.value == "ON") {
-	alert("공기 청정기가 꺼져있습니다.");
-}
-else{
-if(wind == 0)
-alert("바람 세기가 최소입니다.");
-else
-wind--;
-document.getElementById("demo").innerHTML = window.wind;
-}
+
+function Down(){
+	if(state == 0)	alert("공기 청정기가 꺼져 있습니다.");
+	else{
+		if(wind == 0) alert("바람 세기가 최소입니다.");
+		else wind--;
+		document.getElementById("demo").innerHTML = window.wind;
+	}
 }
 </script>
 
-</body>
-</head>
+</html>
